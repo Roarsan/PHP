@@ -1,7 +1,8 @@
 <! - - Speed camera advise script - ->
 
 <?php
-  $points = 13;
+//assigns variable with value of 9
+  $points = 9;
  // Output appropriate message depending on points awarded.
  if ( $points >= 12) 
 {

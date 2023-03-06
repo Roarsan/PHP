@@ -1,4 +1,5 @@
 <?php
+//assigns array its value
   $topmodules[0] = "Open Source Systems ";
   $topmodules[1] = "Programming 1";
   $topmodules[2] = "Network System";
@@ -9,15 +10,25 @@
 <head>
 <title>Data in table</title>
 </head>
+
 <body>
 <table border=1 align="center">
-<tr><th>Index</th><th>Subject</th></tr> 
+<tr>
+  <th>Index</th>
+  <th>Subject</th>
+</tr> 
+
 <?php
+//for loop to display modules in table
   for($count = 0;$count < 5;$count++)
   {
-    echo "<tr><td>$count</td> <td>$topmodules[$count] </td></tr>";
+    echo "<tr>
+    <td>$count</td>
+     <td>$topmodules[$count] </td>
+     </tr>";
   }	
 ?>
+
 </table>
 </body>
 </html>
