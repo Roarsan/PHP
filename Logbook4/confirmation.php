@@ -1,12 +1,44 @@
-<?php
-   $newp = $_POST['price']; // Set the price per widget to $10 (can be changed as per requirement)
-   $qty = $_POST['qty']; // Retrieve the quantity of the order from the form submission
-   $selcolour = $_POST['selcolour']; // Retrieve the selected color from the form submission
- 
+
+
+   <?php
+   session_start();
+   $qty = $_SESSION['selqty'];
+   $colour = $_POST['selcolour'];
+   $size = $_SESSION['selsize'];
+   $price = 0;
+
+   switch ($size) {
+
+    case 'Small':
+
+      $total = $qty * 15.75;
+      break;
+
+    case 'Medium':
+      $total = $qty * 16.75;
+      break;
+
+    case 'Large':
+      $total = $qty * 17.75;
+      break;
+
+    case 'Extra Large':
+      $total = $qty * 18.75;
+      break;
+
+    default:
+      $total = "Undefined";
+      break;
+  }
+
    echo "<h2>Your order qty is $qty</h2>";
-   echo "<h2>The selected colour is $selcolour.</h2>";
- 
- 
-   $total_price = $qty * $newp; // Calculate the total price based on the quantity and price
-   echo "<h2>The total price for $qty widgets is $total_price.</h2>";
+  
+   echo "<h2>The selected colour is $colour.</h2>";
+   echo "<h2>The selected size is $size .</h2>";
+   echo "<h2> Your total is £$total</h2>";
+
+
+
+
+
 ?>
